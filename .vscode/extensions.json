@@ -1,0 +1,25 @@
+{
+  "recommendations": [
+    "ms-ceintl.vscode-language-pack-zh-hans",
+    "zhuangtongfa.material-theme",
+    "thomascsd.vscode-readme-pattern",
+    "vscode-icons-team.vscode-icons",
+
+    "twxs.cmake",
+    "ms-vscode.cmake-tools",
+    "ms-vscode.makefile-tools",
+    "cheshirekow.cmake-format",
+    
+    "vadimcn.vscode-lldb",
+    "ms-vscode.cpptools-extension-pack",
+    
+    "llvm-vs-code-extensions.vscode-clangd",
+    "xaver.clang-format",
+    
+    "eamodio.gitlens",
+    "donjayamanne.githistory",
+
+    "esbenp.prettier-vscode",
+    "CoenraadS.disableligatures"
+  ]
+}

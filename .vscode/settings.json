@@ -1,0 +1,272 @@
+{
+  //cmake
+  "cmake.generator": "MinGW Makefiles",
+  "cmake.buildArgs": ["--parallel"],
+  // C/Cpp扩展禁用补全，仅用于debug
+  "C_Cpp.intelliSenseEngine": "Disabled",
+  //clangd
+  "clangd.arguments": [
+    // 在后台自动分析文件（基于complie_commands)
+    "--background-index",
+    // 标记compelie_commands.json文件的目录位置
+
+    "--compile-commands-dir=build",
+    // 同时开启的任务数量
+    "-j=12",
+    // clang-tidy功能
+    "--clang-tidy",
+    "--clang-tidy-checks=performance-*,bugprone-*",
+    // 全局补全（会自动补充头文件）
+    "--all-scopes-completion",
+    // 更详细的补全内容
+    "--completion-style=detailed",
+    // 补充头文件的形式
+    "--header-insertion=iwyu",
+    // pch优化的位置
+    "--pch-storage=disk",
+    // 查询编译器的位置
+    //CONFIG::
+    // windows上clang默认回去查找msvc的位置，并根据msvc头文件来进行提示，因此可以不用进行指定
+    // 若要使用mingw，需指定具体编译器的绝对路径，如下：
+    "--query-driver=D:\\Develop\\.Env\\mingw64\\bin\\g++.exe"
+  ],
+  //clang-format
+  //CONFIG::
+  "clang-format.executable": "C:\\Users\\xwy\\.vscode\\extensions\\ms-vscode.cpptools-1.9.8-win32-x64\\LLVM\bin\\clang-format.exe",
+  "clang-format.fallbackStyle": "Google",
+
+  /**********
+   * VSCode *
+   **********/
+  // 控制是否及如何在“导航路径”视图中显示文件路径
+  "breadcrumbs.filePath": "on",
+  // 调试控制台中可以用 enter 接受建议
+  "debug.console.acceptSuggestionOnEnter": "on",
+  // 从不自动打开内部调试控制台
+  "debug.internalConsoleOptions": "neverOpen",
+  // 编辑器中可以用 enter 接受建议
+  "editor.acceptSuggestionOnEnter": "on",
+  // 编辑器始终自动改写左引号或右引号
+  "editor.autoClosingOvertype": "always",
+  // 禁用自动检测文件缩进模式和缩进大小，即打开文件后自动将文件更改为 VSCode 配置的缩进格式
+  "editor.detectIndentation": false,
+  // 粘贴时格式化文件
+  "editor.formatOnPaste": true,
+  // 保存时格式化文件
+  "editor.formatOnSave": true,
+  // 在编辑器中显示内联提示
+  "editor.inlayHints.enabled": "on",
+  // 在编辑器中自动显示内联建议
+  "editor.inlineSuggest.enabled": true,
+  // 输入时显示含有参数文档和类型信息的小面板
+  "editor.parameterHints.enabled": true,
+  // 控制是否在键入代码时自动显示建议
+  "editor.quickSuggestions": {
+    // 键入注释时不允许
+    "comments": false,
+    // 键入其他时允许
+    "other": true,
+    // 键入字符串时不允许
+    "strings": false
+  },
+  // 控制显示快速建议前的等待时间（毫秒）
+  "editor.quickSuggestionsDelay": 0,
+  // 控制编辑器在空白字符上显示符号的方式
+  "editor.renderWhitespace": "none",
+  // 代码片段建议置于其他建议之下
+  "editor.snippetSuggestions": "bottom",
+  // 使用空格缩进时模拟制表符的行为，可以方便对齐
+  "editor.stickyTabStops": true,
+  // 建议的接受方式
+  "editor.suggest.insertMode": "replace",
+  // 控制排序时是否提高靠近光标的词语的优先级
+  "editor.suggest.localityBonus": true,
+  // 在多个工作区和窗口间共享建议记忆
+  "editor.suggest.shareSuggestSelections": true,
+  // 控制建议小部件底部的状态栏可见
+  "editor.suggest.showStatusBar": true,
+  // 控制在键入触发字符后是否自动显示建议
+  "editor.suggestOnTriggerCharacters": true,
+  // 始终预先选择第一个建议
+  "editor.suggestSelection": "first",
+  // 一个制表符 = 4个空格
+  "editor.tabSize": 4,
+  // 不突出显示可能与基本 ASCII 字符混淆的字符
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  // 会根据文档中的文字提供建议列表
+  "editor.wordBasedSuggestions": true,
+  // 把文件删除时无需确认
+  "explorer.confirmDelete": false,
+  // 移动文件时无需确认
+  "explorer.confirmDragAndDrop": false,
+  // 粘贴同名文件时的重命名方式
+  //smart: 在重复名称末尾智能地添加/递增数字
+  "explorer.incrementalNaming": "smart",
+  // 忽略扩展建议的通知
+  "extensions.ignoreRecommendations": true,
+  // 等待一定时间后自动保存
+  "files.autoSave": "afterDelay",
+  // 自动保存的等待时间（毫秒）
+  "files.autoSaveDelay": 1000,
+  // 控制单元格编辑器中行号的显示
+  "notebook.lineNumbers": "on",
+  // 控制问题导航的显示顺序
+  "problems.sortOrder": "position",
+  // 显示搜索结果所在行号
+  "search.showLineNumbers": true,
+  // 当搜索词为小写时，则不区分大小写进行搜索；否则区分大小写
+  "search.smartCase": true,
+  // MacOS: 集成终端默认为 zsh
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  // Windows: 集成终端默认为 PowerShell
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  // 集成终端启用视觉化铃声
+  "terminal.integrated.enableBell": true,
+  // 集成终端编码: zh_CN.UTF-8
+  "terminal.integrated.env.windows": {
+    "LC_ALL": "zh_CN.UTF-8"
+  },
+  // 集成终端使用GPU加速
+  "terminal.integrated.gpuAcceleration": "on",
+  // MacOS: 将 Option 键视为终端上的元键
+  "terminal.integrated.macOptionIsMeta": true,
+  // 集成终端右击时选择光标下方的字词，并打开上下文菜单
+  "terminal.integrated.rightClickBehavior": "selectWord",
+  // 始终显示“新建终端”按钮旁的“终端拆分”和“终止”按钮
+  "terminal.integrated.tabs.showActions": "always",
+  // 始终显示活动终端
+  "terminal.integrated.tabs.showActiveTerminal": "always",
+  // 窗口缩放等级
+  "window.zoomLevel": 1,
+  // 允许语言检测使用编辑器历史记录
+  "workbench.editor.historyBasedLanguageDetection": true,
+  // 文件图标主题: 插件 vscode-icons
+  "workbench.iconTheme": "vscode-icons",
+  // 在没有从上一个会话恢复出信息的情况下，在启动时不打开编辑器
+  "workbench.startupEditor": "none",
+  // 显示视图头部的操作项
+  "workbench.view.alwaysShowHeaderActions": true,
+
+  /********
+   * Font *
+   ********/
+  // 针对输出窗口的部分设置
+  "[plaintext]": {
+    // 不使用连字体
+    "editor.fontLigatures": false,
+    // 不在保存时自动格式化
+    "editor.formatOnSave": false,
+    // 启用自动换行
+    "editor.wordWrap": "on"
+  },
+
+  // 对光标所在行禁用连体字
+  "disableLigatures.mode": "Line",
+  // 用于 CodeLens 的字体系列
+  "editor.codeLensFontFamily": "Fira Code",
+  // 字体系列
+  "editor.fontFamily": "Fira Code", //后边的引号中写上要设置的字体类型，个人比较喜欢Fira Code
+  // 启用连字体
+  "editor.fontLigatures": true, //这个控制是否启用字体连字，true启用，false不启用，这里选择启用
+  // 字号
+  "editor.fontSize": 14,
+  "editor.fontWeight": "normal",
+  // 行高：使用 0 根据字号自动计算行高
+  "editor.lineHeight": 0,
+  // 资源管理器不采用紧凑模式
+  "explorer.compactFolders": false,
+  // 用于终端的字体系列
+  "terminal.integrated.fontFamily": "Fira Code",
+  // 集成终端字号
+  "terminal.integrated.fontSize": 14,
+
+  /*********
+   * Color *
+   *********/
+  // 启用括号着色
+  "editor.bracketPairColorization.enabled": true,
+  // 各类括号着色等级独立
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  // 启用括号指导线
+  "editor.guides.bracketPairs": true,
+  // 启用水平括号指导线
+  "editor.guides.bracketPairsHorizontal": "active",
+  // 禁用高亮选中的缩进指导线
+  "editor.guides.highlightActiveIndentation": false,
+  // 禁用缩进指导线
+  "editor.guides.indentation": false,
+  // 语义高亮
+  "editor.semanticHighlighting.enabled": true,
+  "editor.semanticTokenColorCustomizations": {
+    "[Default Dark+]": {
+      "enabled": true,
+      "rules": {
+        // 抽象符号
+        "*.abstract": {
+          "fontStyle": "italic"
+        },
+        // 静态量（静态变量，静态函数）
+        "*.static": {
+          "fontStyle": "bold"
+        },
+        // 未启用的宏
+        "comment": {
+          "fontStyle": "",
+          "foreground": "#767BA6"
+        },
+        // 宏
+        "macro": {
+          "foreground": "#8F5DAF"
+        },
+        // 成员函数
+        "method": {
+          "fontStyle": "underline"
+        },
+        // 命名空间
+        "namespace": {
+          "foreground": "#00D780"
+        },
+        // 函数参数
+        "parameter": {
+          "foreground": "#C8ECFF"
+        },
+        // 只读的函数参数
+        "parameter.readonly": {
+          "foreground": "#7BD1FF"
+        },
+        // 成员变量，似乎需要clangd12以上
+        "property": {
+          "fontStyle": "underline",
+          "foreground": "#C8ECFF"
+        },
+        // 只读量等效为宏
+        "readonly": "#4FC1FF",
+        // 类型参数
+        "typeParameter": "#31A567"
+      }
+    }
+  },
+  // 语义高亮自定义
+  "editor.tokenColorCustomizations": {
+    "[Default Dark+]": {
+      // 注释字体设置为斜体
+      "textMateRules": [
+        {
+          "scope": "comment",
+          "settings": {
+            "fontStyle": "italic"
+          }
+        }
+      ]
+    }
+  },
+  // 括号颜色
+  "workbench.colorCustomizations": {
+    "[Default Dark+]": {
+      "editorBracketHighlight.foreground3": "#9CDCFE",
+      "editorBracketHighlight.foreground4": "#F3FD00",
+      "editorBracketHighlight.foreground5": "#F47D9F",
+      "editorBracketHighlight.foreground6": "#A5ADFE"
+    }
+  }
+}

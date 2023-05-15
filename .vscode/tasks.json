@@ -1,0 +1,53 @@
+{
+  "tasks": [
+    {
+      "label": "cmake-debug",
+      "options": {
+        "cwd": "${workspaceFolder}/build"
+      },
+      "type": "shell",
+      "command": "cmake -G 'MinGW Makefiles' -DCMAKE_BUILD_TYPE=Debug .. "
+    },
+    {
+      "label": "cmake-release",
+      "options": {
+        "cwd": "${workspaceFolder}/build"
+      },
+      "type": "shell",
+      "command": "cmake -G 'MinGW Makefiles' -DCMAKE_BUILD_TYPE=Release .. "
+    },
+    {
+      "label": "make-debug",
+      "options": {
+        "cwd": "${workspaceFolder}/build"
+      },
+      "type": "shell",
+      "command": "mingw32-make -j8",
+      "dependsOn": [
+        "cmake-debug"
+      ],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "make-release",
+      "options": {
+        "cwd": "${workspaceFolder}/build"
+      },
+      "type": "shell",
+      "command": "mingw32-make -j8",
+      "dependsOn": [
+        "cmake-release"
+      ],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ],
+  "version": "2.0.0"
+}
